@@ -3,22 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #161616;
+  /* Ubah background default menjadi #161616 */
+  --foreground: #ededed;
+  /* Sesuaikan foreground agar teks terlihat di background gelap */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
+    /* Bisa tetap menggunakan nilai ini jika diinginkan untuk dark mode */
     --foreground: #ededed;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* app/globals.css */
+
+html, body {
+  position: relative;
+  height: 100%; /* Atur tinggi 100% untuk membuat elemen body memenuhi halaman */
+  margin: 0;
+  padding: 0;
+  background: #161616; /* Warna latar belakang gelap untuk seluruh halaman */
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 3250px;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  /* Sesuaikan lebar scroll bar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Scroll bar transparan */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* Lintasan scroll bar transparan */
+}
+
 
 @layer utilities {
   .text-balance {
