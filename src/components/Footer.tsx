@@ -24,13 +24,13 @@ const Footer: React.FC = () => {
 
       {/* Social Media Icons */}
       <div className="absolute top-[40px] right-[42px] flex space-x-4">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/rplthreee_" target="_blank" rel="noopener noreferrer">
           <FaInstagram size={28} className="text-white" />
         </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.youtube.com/@xpplg3" target="_blank" rel="noopener noreferrer">
           <FaYoutube size={28} className="text-white" />
         </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/@rplthree" target="_blank" rel="noopener noreferrer">
           <FaTiktok size={28} className="text-white" />
         </a>
       </div>

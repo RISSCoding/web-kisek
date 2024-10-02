@@ -139,14 +139,14 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Social Media Icons for desktop */}
-      <div className="hidden md:flex fixed top-[42px] right-[68px] space-x-[30px]">
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+      <div className="hidden md:flex absolute top-[42px] right-[68px] space-x-[30px]">
+        <a href="https://youtube.com/@xpplg3" target="_blank" rel="noopener noreferrer">
           <Image src={youtubeIcon} alt="YouTube" width={28} height={30} />
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/rplthreee_" target="_blank" rel="noopener noreferrer">
           <Image src={instagramIcon} alt="Instagram" width={28} height={30} />
         </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/@rplthree" target="_blank" rel="noopener noreferrer">
           <Image src={tiktokIcon} alt="TikTok" width={28} height={30} />
         </a>
       </div>
