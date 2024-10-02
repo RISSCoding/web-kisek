@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import React from 'react';
 import Image from 'next/image';
-import schoolImage from '@/public/assets/school.jpg';
+import schoolImage from '/public/assets/school.jpg';
 
 const LandingPages = () => {
   return (
@@ -69,7 +69,10 @@ const LandingPages = () => {
           borderRadius: '20px',
         }}
       >
-        <button
+        {/* Add link to download the game */}
+        <a
+          href="https://drive.google.com/uc?export=download&id=1VOwTjxcPLETBQqWhLlMsKu562Y8jSDGr" // Direct download link
+          download="kisahsekolah.zip" // This triggers the download
           className="absolute font-inter font-black text-xl"
           style={{
             width: '109px',
@@ -79,10 +82,11 @@ const LandingPages = () => {
             transform: 'translateY(-50%)',
             color: '#FFFFFF',
             lineHeight: '29px',
+            textAlign: 'center',
           }}
         >
           Play Now
-        </button>
+        </a>
       </div>
     </div>
   );

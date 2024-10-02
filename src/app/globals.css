@@ -2,33 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #161616;
-  /* Ubah background default menjadi #161616 */
-  --foreground: #ededed;
-  /* Sesuaikan foreground agar teks terlihat di background gelap */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    /* Bisa tetap menggunakan nilai ini jika diinginkan untuk dark mode */
-    --foreground: #ededed;
-  }
-}
 
 /* app/globals.css */
 
 html, body {
   position: relative;
-  height: 100%; /* Atur tinggi 100% untuk membuat elemen body memenuhi halaman */
+  height: 100%; /* Memastikan body mengambil seluruh tinggi */
   margin: 0;
   padding: 0;
-  background: #161616; /* Warna latar belakang gelap untuk seluruh halaman */
+  background: #161616;
   overflow-x: hidden;
-  overflow-y: scroll;
-  height: 3250px;
+  overflow-y: auto; /* Mengizinkan scroll vertikal */
 }
+
 
 ::-webkit-scrollbar {
   width: 8px;

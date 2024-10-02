@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { kodchasan } from "@/lib/font"
 import './globals.css'
 
@@ -8,7 +11,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${kodchasan.variable}`}>
-      <body>{children}
+      <head>
+        <title>RPLThree Games</title>
+      </head>
+      <body>
+        {children}
       </body>
     </html>
   )

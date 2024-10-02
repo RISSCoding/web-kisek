@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import rpl3Logo from '@/public/assets/rpl3Logo.png';
-import youtubeIcon from '@/public/assets/youtube.svg';
-import instagramIcon from '@/public/assets/instagram.svg';
-import tiktokIcon from '@/public/assets/tiktok.svg';
+import rpl3Logo from '/public/assets/rpl3Logo.png';
+import youtubeIcon from '/public/assets/youtube.svg';
+import instagramIcon from '/public/assets/instagram.svg';
+import tiktokIcon from '/public/assets/tiktok.svg';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
         <ul className="flex space-x-[50px]">
           <li className="font-inter font-normal text-[12px] leading-[15px] text-white hover:underline cursor-pointer">
             Home
-          </li>
+          </li> 
           <li className="font-inter font-normal text-[12px] leading-[15px] text-white hover:underline cursor-pointer">
             Kisah Sekolah
           </li>
