@@ -1,6 +1,5 @@
 import Navbar from '@/components/Navbar';
 import React from 'react';
-import Image from 'next/image';
 import schoolImage from '/public/assets/school.jpg';
 
 const LandingPages = () => {
