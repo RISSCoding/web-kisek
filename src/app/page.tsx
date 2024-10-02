@@ -1,3 +1,5 @@
+//src/app/page.tsx
+
 import KisahsekolahPages from '@/pages/KisahsekolahPages'
 import LandingPages from '@/pages/LandingPages'
 import React from 'react'

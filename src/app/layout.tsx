@@ -1,6 +1,8 @@
+// src/app/layout.tsx
+
 'use client'
 
-import { useState } from 'react'
+// Hapus deklarasi useState yang tidak digunakan
 import { kodchasan } from "@/lib/font"
 import './globals.css'
 
