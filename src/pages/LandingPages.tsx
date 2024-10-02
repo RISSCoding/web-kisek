@@ -1,3 +1,5 @@
+// src/pages/LandingPages.tsx
+
 import Navbar from '@/components/Navbar';
 import React from 'react';
 import schoolImage from '/public/assets/school.jpg';

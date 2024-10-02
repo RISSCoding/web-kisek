@@ -4,7 +4,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import rpl3Logo from '/public/assets/rpl3Logo.png';
 import youtubeIcon from '/public/assets/youtube.svg';
