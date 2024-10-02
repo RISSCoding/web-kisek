@@ -1,7 +1,9 @@
-'use client'; // Required for Next.js 13+ client-side components
+'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import rpl3Logo from '/public/assets/rpl3Logo.png';
 import youtubeIcon from '/public/assets/youtube.svg';
 import instagramIcon from '/public/assets/instagram.svg';
@@ -9,13 +11,49 @@ import tiktokIcon from '/public/assets/tiktok.svg';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const pathname = usePathname();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScrollTo = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+    }
+  };
+
+  const navItems = [
+    { name: 'Home', sectionId: 'landing' },
+    { name: 'Kisah Sekolah', sectionId: 'kisahsekolah' },
+    { name: 'Feedback', sectionId: 'feedback' },
+    { name: 'About Us', sectionId: 'aboutus' },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['landing', 'kisahsekolah', 'feedback', 'aboutus'];
+      let currentSection = '';
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && window.scrollY >= element.offsetTop - 100) {
+          currentSection = section;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="relative">
+    <nav className="w-full z-50 transition-all duration-300 ease-in-out">
       {/* Background Navbar */}
       <div
         className="absolute min-w-full h-[151px] left-1/2 transform -translate-x-1/2 top-0"
@@ -78,74 +116,39 @@ const Navbar: React.FC = () => {
           </svg>
         </button>
         <ul className="flex flex-col space-y-6 mt-10 ml-4">
-          <li className="font-inter font-normal text-[12px] leading-[15px] hover:underline cursor-pointer">
-            Home
-          </li>
-          <li className="font-inter font-normal text-[12px] leading-[15px] hover:underline cursor-pointer">
-            Kisah Sekolah
-          </li>
-          <li className="font-inter font-normal text-[12px] leading-[15px] hover:underline cursor-pointer">
-            About Us
-          </li>
+          {navItems.map((item) => (
+            <li key={item.name} className="font-inter font-normal text-[12px] leading-[15px] hover:underline cursor-pointer">
+              <a onClick={() => handleScrollTo(item.sectionId)}>{item.name}</a>
+            </li>
+          ))}
         </ul>
-
-        {/* Social Media Icons (Only visible in sidebar on mobile) */}
-        <div className="flex space-x-6 mt-4 ml-4">
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-            <Image src={youtubeIcon} alt="YouTube" width={28} height={30} />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <Image src={instagramIcon} alt="Instagram" width={28} height={30} />
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-            <Image src={tiktokIcon} alt="TikTok" width={28} height={30} />
-          </a>
-        </div>
       </div>
 
-      {/* Menu for desktop */}
-      <div className="hidden md:flex absolute top-[42px] left-[595px] space-x-[50px]">
+      {/* Desktop Menu */}
+      <div className="hidden md:flex top-[27px] ml-[73vh] fixed space-x-[50px] border border-white bg-white bg-opacity-10 backdrop-blur-md p-2 rounded-[2.5rem]">
         <ul className="flex space-x-[50px]">
-          <li className="font-inter font-normal text-[12px] leading-[15px] text-white hover:underline cursor-pointer">
-            Home
-          </li> 
-          <li className="font-inter font-normal text-[12px] leading-[15px] text-white hover:underline cursor-pointer">
-            Kisah Sekolah
-          </li>
-          <li className="font-inter font-normal text-[12px] leading-[15px] text-white hover:underline cursor-pointer">
-            About Us
-          </li>
+          {navItems.map((item) => (
+            <li
+              key={item.name}
+              className={`font-inter font-normal text-[12px] leading-[15px] text-white cursor-pointer px-4 py-2 transition-all duration-300 ease-in-out
+                ${activeSection === item.sectionId ? 'border border-white rounded-[2.5rem]' : 'hover:border hover:border-white hover:rounded-[2.5rem]'}`}
+            >
+              <a onClick={() => handleScrollTo(item.sectionId)}>{item.name}</a>
+            </li>
+          ))}
         </ul>
       </div>
 
       {/* Social Media Icons for desktop */}
-      <div className="hidden md:flex absolute top-[42px] right-[68px] space-x-[30px]">
+      <div className="hidden md:flex fixed top-[42px] right-[68px] space-x-[30px]">
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-          <Image 
-            src={youtubeIcon} 
-            alt="YouTube" 
-            width={28} 
-            height={30} 
-            className="w-[27.79px] h-[30px]"
-          />
+          <Image src={youtubeIcon} alt="YouTube" width={28} height={30} />
         </a>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <Image 
-            src={instagramIcon} 
-            alt="Instagram" 
-            width={28} 
-            height={30} 
-            className="w-[27.79px] h-[30px]"
-          />
+          <Image src={instagramIcon} alt="Instagram" width={28} height={30} />
         </a>
         <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-          <Image 
-            src={tiktokIcon} 
-            alt="TikTok" 
-            width={28} 
-            height={30} 
-            className="w-[27.79px] h-[30px]"
-          />
+          <Image src={tiktokIcon} alt="TikTok" width={28} height={30} />
         </a>
       </div>
     </nav>

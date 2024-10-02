@@ -54,7 +54,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
 const KisahsekolahPages = () => {
   const characters = [
     {
-      name: "Reva Revaldi Rere",
+      name: "Reva Revaldi",
       nickname: "Rere",
       description:
         "Yo, kenalin nama gua Reza Revaldi, tapi panggil aja Rere, bro. Gua adalah orang yang selalu update sama segala hal, makanya orang-orang suka nyebut gua 'si paling tahu'.",

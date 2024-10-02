@@ -4,7 +4,7 @@ import React from 'react'
 
 const FeedbackPages = () => {
   return (
-    <div className='mt-[20vh]'>
+    <div className='mt-[20vh] mb-[15vh]'>
       <div className="font-inter mx-auto text-center font-black text-[24px] leading-[29px] text-white">
         FEEDBACK
       </div>
