@@ -4,7 +4,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import rpl3Logo from '/public/assets/rpl3Logo.png';
 import youtubeIcon from '/public/assets/youtube.svg';
 import instagramIcon from '/public/assets/instagram.svg';
@@ -13,7 +12,6 @@ import tiktokIcon from '/public/assets/tiktok.svg';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const pathname = usePathname();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
