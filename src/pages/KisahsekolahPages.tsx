@@ -1,14 +1,17 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import RereImage from '../../public/assets/rere.png'
+import FannyImage from '../../public/assets/Fanny.png';
+import KellyImage from '../../public/assets/kelly.png';
 
 interface CharacterCardProps {
   name: string;
   nickname: string;
   description: string;
   bgColor: string;
-  imgSrc: string;
+  imgSrc: string;  // Ganti dengan tipe string
   textColor: string;
 }
 
@@ -30,7 +33,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
           alt={name}
           width={240}
           height={357}
-          style={{objectFit:"contain"}}
+          style={{ objectFit: "contain" }}
         />
       </div>
 
@@ -59,7 +62,7 @@ const KisahsekolahPages = () => {
       description:
         "Yo, kenalin nama gua Reza Revaldi, tapi panggil aja Rere, bro. Gua adalah orang yang selalu update sama segala hal, makanya orang-orang suka nyebut gua 'si paling tahu'.",
       bgColor: "bg-[#344996]",
-      imgSrc: "/assets/Rere.png",
+      imgSrc: RereImage.src,  // Gunakan 'src' properti dari impor gambar
       textColor: "text-[#b0c3ff]",
     },
     {
@@ -68,7 +71,7 @@ const KisahsekolahPages = () => {
       description:
         "Hai, nama aku Tifanny Stellar, tapi panggil aku Fanny saja ya. Banyak yang bilang aku tipe cewek yang santai dan cuek.",
       bgColor: "bg-[#C74E8F]",
-      imgSrc: "/assets/Fanny.png",
+      imgSrc: FannyImage.src,  // Gunakan 'src' properti dari impor gambar
       textColor: "text-[#fcb0d4]",
     },
     {
@@ -77,7 +80,7 @@ const KisahsekolahPages = () => {
       description:
         "Hai, aku Kellyana Marlin, ketua OSIS SMAN 69 Wakanda, tapi cukup panggil aku Kelly. Aku orang yang sibuk, banyak urusan di OSIS, tapi aku tetap ramah kok.",
       bgColor: "bg-[#6B3496]",
-      imgSrc: "/assets/Kelly.png",
+      imgSrc: KellyImage.src,  // Gunakan 'src' properti dari impor gambar
       textColor: "text-[#d6b0fc]",
     },
   ];
